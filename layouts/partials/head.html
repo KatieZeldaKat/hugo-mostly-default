@@ -3,4 +3,3 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partial "head/css.html" "css/main.css" }}
 {{ partial "head/css.html" "css/custom.css" }}
-{{ partialCached "head/js.html" . }}
