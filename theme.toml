@@ -1,0 +1,9 @@
+name = 'Mostly Default'
+homepage = 'https://github.com/KatieZeldaKat/hugo-mostly-default'
+description = 'A lightly-modified version of the default theme with a few quality-of-life features.'
+
+license = 'MIT'
+licenselink = 'https://github.com/KatieZeldaKat/hugo-mostly-default/LICENSE'
+
+[author]
+  name = 'Katherine Norton (KatieZeldaKat)'
