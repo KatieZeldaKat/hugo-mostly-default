@@ -1,14 +1,14 @@
-{{ if .IsHome }}
-	{{ range .Site.AllPages }}
+{{- if .IsHome }}
+	{{- range .Site.AllPages }}
 		{{ partial "inline/rss/item.html" (dict "page" .) }}
-	{{ end }}
-{{ else }}
+	{{- end }}
+{{- else }}
 	{{ partial "inline/rss/item.html" (dict "page" .) }}
-{{ end }}
+{{- end }}
 
-{{ define "partials/inline/rss/item.html" }}
-	{{ $title := cond (.page.IsHome) site.Title (printf "%s - %s" .page.Title site.Title) }}
-	{{ with .page.OutputFormats.Get "rss" }}
-		{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $title | safeHTML }}
-	{{ end }}
-{{ end }}
+{{- define "partials/inline/rss/item.html" }}
+	{{- $title := cond (.page.IsHome) site.Title (printf "%s - %s" .page.Title site.Title) }}
+	{{- with .page.OutputFormats.Get "rss" }}
+		{{- printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $title | safeHTML }}
+	{{- end }}
+{{- end }}
