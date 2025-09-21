@@ -1,0 +1,14 @@
+{{- if .IsHome }}
+	{{- range .Site.AllPages }}
+		{{ partial "inline/rss/item.html" . }}
+	{{- end }}
+{{- else }}
+	{{ partial "inline/rss/item.html" . }}
+{{- end }}
+
+{{- define "partials/inline/rss/item.html" }}
+	{{- $title := cond (.IsHome) site.Title (printf "%s - %s" .Title site.Title) }}
+	{{- with .OutputFormats.Get "rss" }}
+		{{- printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $title | safeHTML }}
+	{{- end }}
+{{- end }}

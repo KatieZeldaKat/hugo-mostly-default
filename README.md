@@ -1,9 +1,14 @@
 # Mostly Default Theme
 
-This initial commit is meant to represent an unmodified version of a default theme created via the command `hugo new theme mostly-default`. Some files have been deleted, and only the following has been modified in any way in this initial commit:
+A lightly-modified version of the default theme with a few quality-of-life features:
 
-- `LICENSE`
-    - Added copyright information
-    - Removed newlines inside paragraphs
-- `theme.toml`
-    - Edited information inside to correspond with Mostly Default
+- Native dark mode
+- Desktop and mobile rendering
+- Automatic discoverability for RSS feeds
+- Easily override partial CSS
+- Markdown-formatted links and images
+	- `[Link](link)`
+	- `![Image](image)`
+- Detect if properties exist before rendering
+	- Date - no longer says "January 1, 1"!
+	- Tags - lists only if at least one is present

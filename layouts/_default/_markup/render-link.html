@@ -1,0 +1,9 @@
+<a
+{{ if or (strings.HasPrefix .Destination "http") (strings.HasPrefix .Destination "https") }} 
+	href="{{ .Destination }}"
+	target="_blank"
+{{- else }}
+	href="{{ (.Page.GetPage .Destination).Permalink }}"
+{{- end }}
+>{{ .Text | safeHTML }}</a>
+{{- "" -}}
