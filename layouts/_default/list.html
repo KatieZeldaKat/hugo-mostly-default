@@ -3,7 +3,10 @@
 	{{ .Content }}
 	{{ range .Pages }}
 		<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-		{{- partial "time.html" . }} - {{ .Summary | plainify | htmlUnescape | chomp }}
+		{{- if and .IsPage (not .Date.IsZero) }}
+			{{- partial "time.html" . }} - 
+		{{- end }}
+		{{ .Summary | plainify | htmlUnescape | chomp }}
 	{{ end }}
 	<br /><br />
 {{ end }}
