@@ -1,9 +1,7 @@
 {{ partial "inline/rss/item.html" . }}
 
-{{- if or (eq .Kind "home") (eq .Kind "section") (eq .Kind "taxonomy") }}
-	{{- range .Pages }}
-		{{ partial "inline/rss/item.html" . }}
-	{{- end }}
+{{- range .Pages }}
+	{{ partial "inline/rss/item.html" . }}
 {{- end }}
 
 {{- define "partials/inline/rss/item.html" }}
