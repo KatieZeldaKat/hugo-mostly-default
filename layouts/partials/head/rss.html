@@ -1,8 +1,6 @@
-{{- if .IsHome }}
-	{{- range .Site.AllPages }}
-		{{ partial "inline/rss/item.html" . }}
-	{{- end }}
-{{- else }}
+{{ partial "inline/rss/item.html" . }}
+
+{{- range .Pages }}
 	{{ partial "inline/rss/item.html" . }}
 {{- end }}
 
