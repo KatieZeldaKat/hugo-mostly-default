@@ -1,7 +1,6 @@
 {{ partial "inline/rss/item.html" . }}
 
-{{- $kind := .Kind }}
-{{- if or (eq $kind "home") (eq $kind "section") (eq $kind "taxonomy") }}
+{{- if or (eq .Kind "home") (eq .Kind "section") (eq .Kind "taxonomy") }}
 	{{- range .Pages }}
 		{{ partial "inline/rss/item.html" . }}
 	{{- end }}
