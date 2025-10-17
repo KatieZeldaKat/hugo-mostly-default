@@ -1,9 +1,10 @@
-{{- if .IsHome }}
-	{{- range .Site.AllPages }}
+{{ partial "inline/rss/item.html" . }}
+
+{{- $kind := .Kind }}
+{{- if or (eq $kind "home") (eq $kind "taxonomy") }}
+	{{- range .Pages }}
 		{{ partial "inline/rss/item.html" . }}
 	{{- end }}
-{{- else }}
-	{{ partial "inline/rss/item.html" . }}
 {{- end }}
 
 {{- define "partials/inline/rss/item.html" }}
